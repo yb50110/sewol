@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Source;
 use Illuminate\Http\Request;
 
 class SourceController extends Controller
@@ -13,6 +14,8 @@ class SourceController extends Controller
      */
     public function show()
     {
-        return view('sources');
+        $source_items = Source::all();
+
+        return view('sources', compact('source_items'));
     }
 }

@@ -15,7 +15,9 @@ class CreateSourcesTable extends Migration
     {
         Schema::create('sources', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('source_date');
+            $table->string('title');
+            $table->string('description')->nullable();
+            $table->date('source_date')->nullable();
             $table->time('source_time')->nullable();
             $table->string('image_url')->nullable();
             $table->string('url')->nullable();

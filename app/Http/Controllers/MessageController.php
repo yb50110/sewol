@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Message;
 use Illuminate\Http\Request;
+use App\Http\Requests\MessageRequest;
 
 class MessageController extends Controller
 {
@@ -13,14 +15,19 @@ class MessageController extends Controller
      */
     public function show()
     {
-        return view('messages');
+        $messages_items = Message::all();
+
+        return view('messages', compact('messages_items'));
     }
 
     /**
      * Store new message
      */
-    public function store()
+    public function store(MessageRequest $request)
     {
-
+        Message::create([
+            'text' => $request['final_span'],
+        ]);
+        return redirect()->route('messages');
     }
 }

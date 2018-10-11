@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', 'TimelineController@show');
+Route::get('/', 'TimelineController@show')->name('timeline');
 
-Route::get('/messages', 'MessageController@show');
-Route::post('/messages', 'MessageController@store');
+Route::get('/messages', 'MessageController@show')->name('messages');
+Route::post('/messages', 'MessageController@store')->name('messages.store');
 
-Route::get('/sources', 'SourceController@show');
+Route::get('/sources', 'SourceController@show')->name('sources');
