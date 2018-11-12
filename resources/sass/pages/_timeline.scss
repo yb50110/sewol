@@ -1,0 +1,53 @@
+.page-timeline {
+  background-image: url('../images/timeline-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .timeline {
+    margin-top: 700px;
+    color: #ffffff;
+
+    .timeline-item {
+      padding: 0;
+
+      // Right is default.
+      &.left {
+        text-align: right;
+      }
+      &.center {
+        text-align: center;
+      }
+
+      .yellow {
+        font-weight: 700;
+        color: $yellow;
+        display: block;
+        margin: 10px 0;
+      }
+      .bold {
+        font-weight: 700;
+        display: block;
+        margin: 5px 0;
+      }
+    }
+
+    .timeline-conclusion {
+
+    }
+  }
+
+  // Animation
+  .page-icon {
+
+  }
+  .page-subtitle {
+    animation: page-subtitle-animation;
+  }
+}
+
+@keyframes page-subtitle-animation {
+  /* ADJUST THESE VALUES FOR FADE CONTROL */
+  0% {opacity:0;}
+  35% {opacity:1;}
+  100% {opacity:0.5;}
+}

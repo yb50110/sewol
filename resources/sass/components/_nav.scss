@@ -1,13 +1,21 @@
-@import 'variables';
+.nav-container {
+  position: sticky;
+  top: 0;
 
-.nav {
-  float: right;
+  .nav {
+    float: right;
 
-  .nav-link {
-    padding: 20px 30px;
+    .nav-link {
+      padding: 30px;
+      color: #000000;
+      transition: opacity 0.2s;
 
-    &.active {
-      color: $yellow;
+      &.active {
+        color: $yellow;
+      }
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
 }
