@@ -1,8 +1,13 @@
 html, body {
   font-family: 'Lora', serif;
+  line-height: 150%;
 }
 
 a {
   color: #000000;
   font-weight: 700;
+
+  &:hover {
+    color: #000000;
+  }
 }

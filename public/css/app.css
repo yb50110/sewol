@@ -12,7 +12,7 @@
   --pink: #e83e8c;
   --red: #dc3545;
   --orange: #fd7e14;
-  --yellow: #ffc107;
+  --yellow: #FFDB2B;
   --green: #28a745;
   --teal: #20c997;
   --cyan: #17a2b8;
@@ -23,7 +23,7 @@
   --secondary: #6c757d;
   --success: #28a745;
   --info: #17a2b8;
-  --warning: #ffc107;
+  --warning: #FFDB2B;
   --danger: #dc3545;
   --light: #f8f9fa;
   --dark: #343a40;
@@ -2042,16 +2042,16 @@ pre code {
 .table-warning,
 .table-warning > th,
 .table-warning > td {
-  background-color: #ffeeba;
+  background-color: #fff5c4;
 }
 
 .table-hover .table-warning:hover {
-  background-color: #ffe8a1;
+  background-color: #fff1ab;
 }
 
 .table-hover .table-warning:hover > td,
 .table-hover .table-warning:hover > th {
-  background-color: #ffe8a1;
+  background-color: #fff1ab;
 }
 
 .table-danger,
@@ -2979,42 +2979,42 @@ fieldset:disabled a.btn {
 
 .btn-warning {
   color: #212529;
-  background-color: #ffc107;
-  border-color: #ffc107;
+  background-color: #FFDB2B;
+  border-color: #FFDB2B;
 }
 
 .btn-warning:hover {
   color: #212529;
-  background-color: #e0a800;
-  border-color: #d39e00;
+  background-color: #ffd505;
+  border-color: #f7cd00;
 }
 
 .btn-warning:focus,
 .btn-warning.focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 219, 43, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(255, 219, 43, 0.5);
 }
 
 .btn-warning.disabled,
 .btn-warning:disabled {
   color: #212529;
-  background-color: #ffc107;
-  border-color: #ffc107;
+  background-color: #FFDB2B;
+  border-color: #FFDB2B;
 }
 
 .btn-warning:not(:disabled):not(.disabled):active,
 .btn-warning:not(:disabled):not(.disabled).active,
 .show > .btn-warning.dropdown-toggle {
   color: #212529;
-  background-color: #d39e00;
-  border-color: #c69500;
+  background-color: #f7cd00;
+  border-color: #eac200;
 }
 
 .btn-warning:not(:disabled):not(.disabled):active:focus,
 .btn-warning:not(:disabled):not(.disabled).active:focus,
 .show > .btn-warning.dropdown-toggle:focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 219, 43, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(255, 219, 43, 0.5);
 }
 
 .btn-danger {
@@ -3298,27 +3298,27 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-warning {
-  color: #ffc107;
+  color: #FFDB2B;
   background-color: transparent;
   background-image: none;
-  border-color: #ffc107;
+  border-color: #FFDB2B;
 }
 
 .btn-outline-warning:hover {
   color: #212529;
-  background-color: #ffc107;
-  border-color: #ffc107;
+  background-color: #FFDB2B;
+  border-color: #FFDB2B;
 }
 
 .btn-outline-warning:focus,
 .btn-outline-warning.focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 219, 43, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(255, 219, 43, 0.5);
 }
 
 .btn-outline-warning.disabled,
 .btn-outline-warning:disabled {
-  color: #ffc107;
+  color: #FFDB2B;
   background-color: transparent;
 }
 
@@ -3326,15 +3326,15 @@ fieldset:disabled a.btn {
 .btn-outline-warning:not(:disabled):not(.disabled).active,
 .show > .btn-outline-warning.dropdown-toggle {
   color: #212529;
-  background-color: #ffc107;
-  border-color: #ffc107;
+  background-color: #FFDB2B;
+  border-color: #FFDB2B;
 }
 
 .btn-outline-warning:not(:disabled):not(.disabled):active:focus,
 .btn-outline-warning:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-warning.dropdown-toggle:focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 219, 43, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(255, 219, 43, 0.5);
 }
 
 .btn-outline-danger {
@@ -5590,14 +5590,14 @@ input[type="button"].btn-block {
 
 .badge-warning {
   color: #212529;
-  background-color: #ffc107;
+  background-color: #FFDB2B;
 }
 
 .badge-warning[href]:hover,
 .badge-warning[href]:focus {
   color: #212529;
   text-decoration: none;
-  background-color: #d39e00;
+  background-color: #f7cd00;
 }
 
 .badge-danger {
@@ -5740,17 +5740,17 @@ input[type="button"].btn-block {
 }
 
 .alert-warning {
-  color: #856404;
-  background-color: #fff3cd;
-  border-color: #ffeeba;
+  color: #857216;
+  background-color: #fff8d5;
+  border-color: #fff5c4;
 }
 
 .alert-warning hr {
-  border-top-color: #ffe8a1;
+  border-top-color: #fff1ab;
 }
 
 .alert-warning .alert-link {
-  color: #533f03;
+  color: #594c0f;
 }
 
 .alert-danger {
@@ -6029,20 +6029,20 @@ input[type="button"].btn-block {
 }
 
 .list-group-item-warning {
-  color: #856404;
-  background-color: #ffeeba;
+  color: #857216;
+  background-color: #fff5c4;
 }
 
 .list-group-item-warning.list-group-item-action:hover,
 .list-group-item-warning.list-group-item-action:focus {
-  color: #856404;
-  background-color: #ffe8a1;
+  color: #857216;
+  background-color: #fff1ab;
 }
 
 .list-group-item-warning.list-group-item-action.active {
   color: #fff;
-  background-color: #856404;
-  border-color: #856404;
+  background-color: #857216;
+  border-color: #857216;
 }
 
 .list-group-item-danger {
@@ -6958,14 +6958,14 @@ button.bg-info:focus {
 }
 
 .bg-warning {
-  background-color: #ffc107 !important;
+  background-color: #FFDB2B !important;
 }
 
 a.bg-warning:hover,
 a.bg-warning:focus,
 button.bg-warning:hover,
 button.bg-warning:focus {
-  background-color: #d39e00 !important;
+  background-color: #f7cd00 !important;
 }
 
 .bg-danger {
@@ -7066,7 +7066,7 @@ button.bg-dark:focus {
 }
 
 .border-warning {
-  border-color: #ffc107 !important;
+  border-color: #FFDB2B !important;
 }
 
 .border-danger {
@@ -10300,12 +10300,12 @@ a.text-info:focus {
 }
 
 .text-warning {
-  color: #ffc107 !important;
+  color: #FFDB2B !important;
 }
 
 a.text-warning:hover,
 a.text-warning:focus {
-  color: #d39e00 !important;
+  color: #f7cd00 !important;
 }
 
 .text-danger {
@@ -10610,10 +10610,37 @@ table {
 html,
 body {
   font-family: 'Lora', serif;
+  line-height: 150%;
 }
 
 a {
   color: #000000;
   font-weight: 700;
+}
+
+a:hover {
+  color: #000000;
+}
+
+.page-title {
+  font-weight: 700;
+  font-size: 2.5em;
+  margin: 29px 0;
+}
+
+.page-subtitle {
+  width: 50%;
+}
+
+.nav {
+  float: right;
+}
+
+.nav .nav-link {
+  padding: 20px 30px;
+}
+
+.nav .nav-link.active {
+  color: #FFDB2B;
 }
 

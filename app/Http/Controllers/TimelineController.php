@@ -14,8 +14,6 @@ class TimelineController extends Controller
      */
     public function show()
     {
-        $timeline_items = Timeline::all();
-
-        return view('timeline', compact('timeline_items'));
+        return view('timeline');
     }
 }
