@@ -20,7 +20,11 @@
 <body>
 
 <header>
-    {{--header code--}}
+    <div class="nav">
+        <a href="{{ route('timeline') }}" class="nav-link">Timeline</a>
+        <a href="{{ route('messages') }}" class="nav-link">Messages</a>
+        <a href="{{ route('sources') }}" class="nav-link">Sources</a>
+    </div>
 </header>
 
 <div class="wrapper">
