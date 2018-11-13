@@ -1,18 +1,66 @@
-.page-timeline {
-  background-image: url('../images/timeline-bg.png');
-  background-repeat: no-repeat;
+.temp-bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 50vh;
   background-size: cover;
+  background-image: url('../images/timeline-bg.png');
+
+  .ship {
+    position: absolute;
+    top: 16px;
+    width: 567px;
+    left: 383px;
+    opacity: 0;
+    animation: animation-fadein;
+    animation-delay: 10s;
+  }
+}
+
+.page-timeline {
+  background-image: url('../images/timeline-bg-full.png');
+  background-position-y: 50vh;
+  animation: animation-changebg;
+  animation-delay: 20s;
 
   .timeline {
-    margin-top: 700px;
+    padding-bottom: 500px;
+    margin-bottom: 850px;
+    margin-top: 1000px;
+    position: relative;
     color: #ffffff;
 
+    .timeline-line {
+      border-right: 1px solid #FFDB2B;
+      position: absolute;
+      height: 100%;
+      left: 50%;
+      top: 10px;
+    }
+
     .timeline-item {
+      margin-bottom: 60px;
       padding: 0;
+
+      &:before {
+        background-image: url('../images/timeline-dot.png');
+        background-size: contain;
+        position: absolute;
+        height: 20px;
+        content: "";
+        width: 20px;
+        left: -87px;
+        top: 5px;
+      }
 
       // Right is default.
       &.left {
         text-align: right;
+        &:before {
+          left: unset;
+          right: -87px;
+        }
       }
       &.center {
         text-align: center;
@@ -22,7 +70,7 @@
         font-weight: 700;
         color: $yellow;
         display: block;
-        margin: 10px 0;
+        margin: 0 0 10px 0;
       }
       .bold {
         font-weight: 700;
@@ -32,22 +80,58 @@
     }
 
     .timeline-conclusion {
+      top: calc(100% + 50px);
+      text-align: center;
+      position: absolute;
+      color: #000000;
 
+      &:before {
+        background-image: url('../images/timeline-dot.png');
+        background-size: contain;
+        position: absolute;
+        height: 20px;
+        content: "";
+        width: 20px;
+        left: 50%;
+        transform: translateX(-25px);
+        top: -45px;
+      }
+
+      > p {
+        margin: 20px 0;
+      }
+
+      img {
+        margin: 0 auto 30px auto;
+        display: block;
+
+        &:last-of-type { // papership
+          margin: 70px auto 10px auto;
+          width: 70px;
+        }
+      }
     }
   }
 
   // Animation
   .page-icon {
-
+    opacity: 0;
+    animation: animation-fadein 1s forwards;
+    animation-delay: 14s;
   }
-  .page-subtitle {
-    animation: page-subtitle-animation;
+
+  .page-title {
+    opacity: 0;
+    animation: animation-fadein 2s forwards;
+    animation-delay: 13s;
+  }
+
+  .animation-fadein {
+    animation: animation-fadein 0.25s;
   }
 }
 
-@keyframes page-subtitle-animation {
-  /* ADJUST THESE VALUES FOR FADE CONTROL */
-  0% {opacity:0;}
-  35% {opacity:1;}
-  100% {opacity:0.5;}
+@keyframes animation-fadein {
+  0%    {opacity: 0;}
+  100%  {opacity: 1;}
 }

@@ -8,13 +8,9 @@
     .nav-link {
       padding: 30px;
       color: #000000;
-      transition: opacity 0.2s;
 
       &.active {
         color: $yellow;
-      }
-      &:hover {
-        opacity: 0.5;
       }
     }
   }

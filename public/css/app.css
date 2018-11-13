@@ -9546,13 +9546,28 @@ html, body {
   line-height: 150%;
 }
 
+body {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 a {
   color: #000000;
   font-weight: 700;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 a:hover {
+  text-decoration: none;
   color: #000000;
+  opacity: 0.5;
+}
+
+.my-container {
+  padding: 0 150px;
+  max-width: 100%;
+  width: 100%;
 }
 
 .group:after {
@@ -9561,9 +9576,14 @@ a:hover {
   clear: both;
 }
 
+footer {
+  font-size: 0.75em;
+  color: #878787;
+}
+
 .page-introduction {
-  margin-top: 100px;
-  max-height: 100vh;
+  margin-top: 40px;
+  min-height: 300px;
 }
 
 .page-introduction .page-icon {
@@ -9577,26 +9597,82 @@ a:hover {
 }
 
 .page-introduction .page-subtitle {
+  position: relative;
+  min-height: 100px;
+  width: 600px;
   padding: 0;
+}
+
+.temp-bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 50vh;
+  background-size: cover;
+  background-image: url("../images/timeline-bg.png");
+}
+
+.temp-bg .ship {
+  position: absolute;
+  top: 16px;
+  width: 567px;
+  left: 383px;
+  opacity: 0;
+  -webkit-animation: animation-fadein;
+          animation: animation-fadein;
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
 }
 
 .page-timeline {
-  background-image: url("../images/timeline-bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url("../images/timeline-bg-full.png");
+  background-position-y: 50vh;
+  -webkit-animation: animation-changebg;
+          animation: animation-changebg;
+  -webkit-animation-delay: 20s;
+          animation-delay: 20s;
 }
 
 .page-timeline .timeline {
-  margin-top: 700px;
+  padding-bottom: 500px;
+  margin-bottom: 850px;
+  margin-top: 1000px;
+  position: relative;
   color: #ffffff;
 }
 
+.page-timeline .timeline .timeline-line {
+  border-right: 1px solid #FFDB2B;
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  top: 10px;
+}
+
 .page-timeline .timeline .timeline-item {
+  margin-bottom: 60px;
   padding: 0;
+}
+
+.page-timeline .timeline .timeline-item:before {
+  background-image: url("../images/timeline-dot.png");
+  background-size: contain;
+  position: absolute;
+  height: 20px;
+  content: "";
+  width: 20px;
+  left: -87px;
+  top: 5px;
 }
 
 .page-timeline .timeline .timeline-item.left {
   text-align: right;
+}
+
+.page-timeline .timeline .timeline-item.left:before {
+  left: unset;
+  right: -87px;
 }
 
 .page-timeline .timeline .timeline-item.center {
@@ -9607,7 +9683,7 @@ a:hover {
   font-weight: 700;
   color: #FFDB2B;
   display: block;
-  margin: 10px 0;
+  margin: 0 0 10px 0;
 }
 
 .page-timeline .timeline .timeline-item .bold {
@@ -9616,34 +9692,76 @@ a:hover {
   margin: 5px 0;
 }
 
-.page-timeline .page-subtitle {
-  -webkit-animation: page-subtitle-animation;
-          animation: page-subtitle-animation;
+.page-timeline .timeline .timeline-conclusion {
+  top: calc(100% + 50px);
+  text-align: center;
+  position: absolute;
+  color: #000000;
 }
 
-@-webkit-keyframes page-subtitle-animation {
-  /* ADJUST THESE VALUES FOR FADE CONTROL */
+.page-timeline .timeline .timeline-conclusion:before {
+  background-image: url("../images/timeline-dot.png");
+  background-size: contain;
+  position: absolute;
+  height: 20px;
+  content: "";
+  width: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-25px);
+          transform: translateX(-25px);
+  top: -45px;
+}
+
+.page-timeline .timeline .timeline-conclusion > p {
+  margin: 20px 0;
+}
+
+.page-timeline .timeline .timeline-conclusion img {
+  margin: 0 auto 30px auto;
+  display: block;
+}
+
+.page-timeline .timeline .timeline-conclusion img:last-of-type {
+  margin: 70px auto 10px auto;
+  width: 70px;
+}
+
+.page-timeline .page-icon {
+  opacity: 0;
+  -webkit-animation: animation-fadein 1s forwards;
+          animation: animation-fadein 1s forwards;
+  -webkit-animation-delay: 14s;
+          animation-delay: 14s;
+}
+
+.page-timeline .page-title {
+  opacity: 0;
+  -webkit-animation: animation-fadein 2s forwards;
+          animation: animation-fadein 2s forwards;
+  -webkit-animation-delay: 13s;
+          animation-delay: 13s;
+}
+
+.page-timeline .animation-fadein {
+  -webkit-animation: animation-fadein 0.25s;
+          animation: animation-fadein 0.25s;
+}
+
+@-webkit-keyframes animation-fadein {
   0% {
     opacity: 0;
   }
-  35% {
-    opacity: 1;
-  }
   100% {
-    opacity: 0.5;
+    opacity: 1;
   }
 }
 
-@keyframes page-subtitle-animation {
-  /* ADJUST THESE VALUES FOR FADE CONTROL */
+@keyframes animation-fadein {
   0% {
     opacity: 0;
   }
-  35% {
-    opacity: 1;
-  }
   100% {
-    opacity: 0.5;
+    opacity: 1;
   }
 }
 
@@ -9660,14 +9778,8 @@ a:hover {
 .nav-container .nav .nav-link {
   padding: 30px;
   color: #000000;
-  -webkit-transition: opacity 0.2s;
-  transition: opacity 0.2s;
 }
 
 .nav-container .nav .nav-link.active {
   color: #FFDB2B;
-}
-
-.nav-container .nav .nav-link:hover {
-  opacity: 0.5;
 }

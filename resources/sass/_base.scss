@@ -3,13 +3,27 @@ html, body {
   line-height: 150%;
 }
 
+body {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 a {
   color: #000000;
   font-weight: 700;
+  transition: 0.2s;
 
   &:hover {
+    text-decoration: none;
     color: #000000;
+    opacity: 0.5;
   }
+}
+
+.my-container {
+  padding: 0 150px;
+  max-width: 100%;
+  width: 100%;
 }
 
 // 2018 ver of clearfix
@@ -17,4 +31,9 @@ a {
   content: "";
   display: table;
   clear: both;
+}
+
+footer {
+  font-size: 0.75em;
+  color: $gray;
 }
