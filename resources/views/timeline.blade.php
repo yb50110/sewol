@@ -33,7 +33,7 @@
         </div>
         <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
             <p class="offset-md-7 col-md-5 timeline-item">
-                <span class="bold">9:26</span> Coast Guard arrives at scene but is only able to rescue passengers in the water or outside.
+                <span class="bold">9:26</span> Coast Guard arrives at scene but is only able to rescue passengers in the water or outside. Most of the 170 rescued passengers were saved by other private or commercial boats.
             </p></div>
         <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
             <p class="col-md-5 timeline-item left">
@@ -41,7 +41,7 @@
             </p></div>
         <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
             <p class="offset-md-7 col-md-5 timeline-item">
-                <span class="bold">NEED TIME</span> After 7 hours of missing in action, President Park finally appears in national broadcast but does not seem to understand the gravity of situation.
+                <span class="bold">17:15</span> After 7 mysterious hours, President Park finally appears in national broadcast but does not seem to understand the gravity of situation.
             </p></div>
 
         <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
@@ -115,7 +115,7 @@
 
                 // Fade-in text animation
                 let i = -1;
-                const string = "On the early morning of April 16, 2016, the Sewol ferry flipped and capsized, taking the lives of 304 passengers out of 476. Of the 476 passengers, 325 were high school students on a traditional, annual school trip.";
+                const string = "On the early morning of April 16, 2016, the Sewol ferry flipped and capsized, taking the lives of 304 passengers out of 476. Of the victims, 250 were students of Danwon High School who were on a annual school trip.";
                 const array = string.split("");
                 const x = document.getElementById('page-subtitle-timeline');
 

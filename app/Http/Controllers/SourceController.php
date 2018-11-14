@@ -14,8 +14,10 @@ class SourceController extends Controller
      */
     public function show()
     {
-        $source_items = Source::all();
+        $documentaries = Source::where('type', 'Documentary')->get();
+        $news = Source::where('type', 'News')->get();
+        $others = Source::where('type', 'Other')->get();
 
-        return view('sources', compact('source_items'));
+        return view('sources', compact('documentaries', 'news', 'others'));
     }
 }
