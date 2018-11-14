@@ -192,7 +192,7 @@ class InsertSources extends Migration
         DB::table('sources')->insert([
             'title' => 'Sewol Victim\'s Family Broadcast 416 TV',
             'author' => '',
-            'description' => 'YouTube channel that updates on Sewol-related community activities.',
+            'description' => 'A YouTube channel that updates on Sewol-related community activities.',
             'image_url' => 'https://yt3.ggpht.com/a-/AN66SAytg0hHHvvOo_wUeUK3SwqSTQQmAxkwzKQNNg=s288-mo-c-c0xffffffff-rj-k-no',
             'url' => 'https://www.youtube.com/channel/UCvHKQ67ne-L4Msj7MCWD4aw',
             'type' => 'Other'
@@ -200,7 +200,7 @@ class InsertSources extends Migration
         DB::table('sources')->insert([
             'title' => '416 Family Council',
             'author' => '',
-            'description' => 'Korean website ran by the victim\'s families to update on events and store and share information.',
+            'description' => 'A Korean website ran by the victim\'s families to update on events and store and share information.',
             'image_url' => 'http://416family.org/wp-content/uploads/2016/12/logo_416.png',
             'url' => 'http://416family.org/',
             'type' => 'Other'
