@@ -28,10 +28,8 @@
     </div>
 </header>
 
-<div class="my-container">
-    <div class="body">
-        @yield('content')
-    </div>
+<div class="body">
+    @yield('content')
 </div>
 
 <footer>

@@ -1,4 +1,4 @@
-<div class="offset-md-1 col-md-10 timeline">
+<div class="timeline">
     <div class="timeline-line"></div>
 
     <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
@@ -47,10 +47,10 @@
         <p class="offset-md-6 col-md-6 timeline-item">
             <span class="yellow">May 14, 2014</span> President Park promises that there will be search efforts until all passenger bodies are recovered.
         </p>
-        <img src="{{ asset('images/timeline-jacket.png') }}" style="width: 150px; top: 0; right: 0;">
-        <img src="{{ asset('images/timeline-tie.png') }}" style="width: 50px; top: 0; right: 0;">
-        <img src="{{ asset('images/timeline-notes.png') }}" style="width: 100px; top: 0; right: 0;">
-        <img src="{{ asset('images/timeline-nametag.png') }}" style="width: 50px; top: 0; right: 0;">
+        <img src="{{ asset('images/timeline-jacket.png') }}" style="width: 250px; top: 30px; left: 0;">
+        <img src="{{ asset('images/timeline-tie.png') }}" style="width: 50px; top: 170px; left: 125px;">
+        <img src="{{ asset('images/timeline-notes.png') }}" style="width: 190px; top: 400px; left: 120px;">
+        <img src="{{ asset('images/timeline-nametag.png') }}" style="width: 70px; top: 615px; left: 0;">
     </div>
 
     <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
@@ -80,7 +80,10 @@
     <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
         <p class="col-md-6 timeline-item left">
             <span class="yellow">September 2016</span> Special Investigation Committee is disbanded due to the expiration of the contract. The government counted the 8-month period where the committee was inactive due to insufficient funds.
-        </p></div>
+        </p>
+        <img src="{{ asset('images/timeline-skirt.png') }}" style="width: 150px; top: 165px; right: 100px;">
+        <img src="{{ asset('images/timeline-vest.png') }}" style="width: 170px; top: 0; right: 0;">
+    </div>
 
     <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
         <p class="col-md-6 timeline-item left">
@@ -95,7 +98,10 @@
     <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
         <p class="offset-md-6 col-md-6 timeline-item">
             <span class="yellow">August 6, 2018</span> The Sewol Ferry Hull Investigation Committee failed to pinpoint an exact cause for the sinking of Sewol. They left open the possibilities of an internal or external factors.
-        </p></div>
+        </p>
+        <img src="{{ asset('images/timeline-shirt.png') }}" style="width: 200px; top: 30px; left: 0;">
+    </div>
+
     <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
         <p class="offset-md-6 col-md-6 timeline-item">
             <span class="yellow">So why did the ferry sink?</span> The government still stands that the sudden tilt caused the cargo to slide to one side, further worsening the tilt.
@@ -103,7 +109,7 @@
             <br><br>The directors of “Murky Waters” point to inexperienced crew, cargo weight, untied cargo, and underwater collision as a possibility.
         </p></div>
 
-    <div class="offset-md-2 col-md-8 timeline-conclusion">
+    <div class="timeline-conclusion">
         <p>The victim’s families have been the reason why Sewol had not been forgotten. They protested to the government by marching, shaving, fasting, petitioning, and so on. But the government responded by ignoring and even ridiculing them.
         <p>But they could not give up on their children. They wish for their misfortune to end at them and hope for a safer country for other children. They vowed to continue fighting for the truth and leave a chapter in the Korean history.</p>
         <p>They are still on their way to find the truth.<br>I will be with them until the truth is found.</p>

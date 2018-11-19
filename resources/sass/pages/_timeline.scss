@@ -1,46 +1,24 @@
-//.temp-bg {
-//  position: absolute;
-//  width: 100vw;
-//  height: 100vh;
-//  left: 0;
-//  top: 50vh;
-//  background-size: cover;
-//  background-image: url('../images/timeline-bg.png');
-//
-//  .ship {
-//    position: absolute;
-//    top: 16px;
-//    width: 567px;
-//    left: 383px;
-//    opacity: 0;
-//    animation: animation-fadein;
-//    animation-delay: 10s;
-//  }
-//}
-
 .page-timeline {
-  background-color: #ffffff;
-  //background-image: url('../images/timeline-bg-full-min.png');
-  background-position-y: 50vh;
-  animation: animation-fadein 2s;
 
   .timeline {
-    padding-bottom: 500px;
-    margin-bottom: 850px;
-    margin-top: 1000px;
+    margin-bottom: 100vh;
     position: relative;
     color: #ffffff;
+    background-image: url(../images/timeline-bg-full.png);
+    background-repeat: no-repeat;
+    padding: 1000px 300px 815px 300px;
+    background-size: cover;
 
     .timeline-line {
       border-right: 1px solid #FFDB2B;
+      height: calc(100% - 895px);
       position: absolute;
-      height: 100%;
+      top: 1010px;
       left: 50%;
-      top: 10px;
     }
 
     .timeline-item {
-      margin-bottom: 60px;
+      margin-bottom: 100px;
       padding: 0 0 0 80px;
 
       &:before {
@@ -85,20 +63,23 @@
     }
 
     .timeline-conclusion {
-      top: calc(100% + 50px);
+      top: calc(100% + 150px);
+      margin-left: -300px;
       text-align: center;
       position: absolute;
       color: #000000;
+      width: 600px;
+      left: 50%;
 
       &:before {
         background-image: url('../images/timeline-dot.png');
+        transform: translateX(-25px);
         background-size: contain;
         position: absolute;
         height: 20px;
         content: "";
         width: 20px;
-        left: 50%;
-        transform: translateX(-25px);
+        left: 315px;
         top: -45px;
       }
 
@@ -108,6 +89,7 @@
 
       img {
         margin: 0 auto 30px auto;
+        position: static;
         display: block;
 
         &:last-of-type { // papership
@@ -122,13 +104,13 @@
   .page-icon {
     opacity: 0;
     animation: animation-fadein 1s forwards;
-    animation-delay: 14s;
+    animation-delay: 12s;
   }
 
   .page-title {
     opacity: 0;
     animation: animation-fadein 2s forwards;
-    animation-delay: 13s;
+    animation-delay: 10s;
   }
 
   .animation-fadein {

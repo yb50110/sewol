@@ -17,7 +17,7 @@ $(document).ready(function () {
         if (i < (array.length)) {
             setTimeout(Slide, 20);
         } else {
-            $('.page-timeline').css('background-image', 'url(\'../images/timeline-bg-full-min.png\')');
+            // $('.page-timeline').css('background-image', 'url(\'../images/timeline-bg-tophalf.png\')');
         }
     }
     function Slide() {
