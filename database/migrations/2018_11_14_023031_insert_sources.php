@@ -166,16 +166,16 @@ class InsertSources extends Migration
             'url' => 'https://www.reuters.com/article/us-southkorea-ferry/south-korea-court-holds-government-accountable-for-2014-ferry-sinking-for-the-first-time-idUSKBN1K9055',
             'type' => 'News'
         ]);
-        DB::table('sources')->insert([
-            'title' => 'Fatal Sewol ferry that sank, claiming 300 lives including 250 school students, is lifted upright four years after tragedy off of South Korean coast',
-            'author' => 'Daily Mail',
-            'description' => '',
-            'source_date' => '2018-05-10',
-            'source_time' => '15:43',
-            'image_url' => 'https://i.dailymail.co.uk/i/newpix/2018/05/10/10/4C0ACB0600000578-5713043-image-a-17_1525944919142.jpg',
-            'url' => 'https://www.dailymail.co.uk/news/article-5713043/Ferry-killed-300-lifted-upright-four-years-tragedy-South-Korean-coast.html',
-            'type' => 'News'
-        ]);
+//        DB::table('sources')->insert([
+//            'title' => 'Fatal Sewol ferry that sank, claiming 300 lives including 250 school students, is lifted upright four years after tragedy off of South Korean coast',
+//            'author' => 'Daily Mail',
+//            'description' => '',
+//            'source_date' => '2018-05-10',
+//            'source_time' => '15:43',
+//            'image_url' => 'https://i.dailymail.co.uk/i/newpix/2018/05/10/10/4C0ACB0600000578-5713043-image-a-17_1525944919142.jpg',
+//            'url' => 'https://www.dailymail.co.uk/news/article-5713043/Ferry-killed-300-lifted-upright-four-years-tragedy-South-Korean-coast.html',
+//            'type' => 'News'
+//        ]);
         DB::table('sources')->insert([
             'title' => 'Funerals held for five missing victims of Sewol ferry disaster',
             'author' => 'HanKyeoreh',

@@ -13,8 +13,11 @@ const mix = require('laravel-mix');
 
 mix
     .copy('resources/images', 'public/images')
+
     .js('resources/js/app.js', 'public/js')
     .js('resources/js/voice-recognition.js', 'public/js')
+    .js('resources/js/timeline.js', 'public/js')
+
     .sass('resources/sass/app.scss', 'public/css')
         .options({
             processCssUrls: false

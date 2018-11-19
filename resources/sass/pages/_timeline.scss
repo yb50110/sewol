@@ -1,28 +1,28 @@
-.temp-bg {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  left: 0;
-  top: 50vh;
-  background-size: cover;
-  background-image: url('../images/timeline-bg.png');
-
-  .ship {
-    position: absolute;
-    top: 16px;
-    width: 567px;
-    left: 383px;
-    opacity: 0;
-    animation: animation-fadein;
-    animation-delay: 10s;
-  }
-}
+//.temp-bg {
+//  position: absolute;
+//  width: 100vw;
+//  height: 100vh;
+//  left: 0;
+//  top: 50vh;
+//  background-size: cover;
+//  background-image: url('../images/timeline-bg.png');
+//
+//  .ship {
+//    position: absolute;
+//    top: 16px;
+//    width: 567px;
+//    left: 383px;
+//    opacity: 0;
+//    animation: animation-fadein;
+//    animation-delay: 10s;
+//  }
+//}
 
 .page-timeline {
-  background-image: url('../images/timeline-bg-full.png');
+  background-color: #ffffff;
+  //background-image: url('../images/timeline-bg-full-min.png');
   background-position-y: 50vh;
-  animation: animation-changebg;
-  animation-delay: 20s;
+  animation: animation-fadein 2s;
 
   .timeline {
     padding-bottom: 500px;
@@ -41,7 +41,7 @@
 
     .timeline-item {
       margin-bottom: 60px;
-      padding: 0;
+      padding: 0 0 0 80px;
 
       &:before {
         background-image: url('../images/timeline-dot.png');
@@ -50,16 +50,17 @@
         height: 20px;
         content: "";
         width: 20px;
-        left: -87px;
+        left: -10px;
         top: 5px;
       }
 
       // Right is default.
       &.left {
+        padding: 0 80px 0 0;
         text-align: right;
         &:before {
           left: unset;
-          right: -87px;
+          right: -10px;
         }
       }
       &.center {
@@ -77,6 +78,10 @@
         display: block;
         margin: 5px 0;
       }
+    }
+
+    img {
+      position: absolute;
     }
 
     .timeline-conclusion {

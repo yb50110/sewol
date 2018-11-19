@@ -20,6 +20,10 @@ a {
   }
 }
 
+p {
+  font-size: 0.9em;
+}
+
 .my-container {
   padding: 0 150px;
   max-width: 100%;
@@ -34,7 +38,7 @@ a {
 }
 
 footer {
+  padding: 20px 50px;
   font-size: 0.75em;
-  padding: 20px 0;
   color: $gray;
 }

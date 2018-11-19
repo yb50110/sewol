@@ -1,7 +1,14 @@
 @extends('layouts.app')
 @section('content')
 
-    <h1>messages</h1>
+    <div class="page-introduction">
+        <img class="page-icon" src="{{ asset('images/papership.png') }}" alt="Sewol yellow ribbon">
+        <h1 class="page-title">Messages</h1>
+        <p class="col-md-5 page-subtitle" id="page-subtitle-timeline">
+            Leave a messages for the families and victims.
+            <br>
+            You may view messages from other visitors as well.</p>
+    </div>
 
     @foreach($messages_items as $message)
         {{-- todo: format date --}}

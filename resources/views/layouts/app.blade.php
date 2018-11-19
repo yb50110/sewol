@@ -18,26 +18,33 @@
 </head>
 <body>
 
-<div class="my-container">
-    <header class="group nav-container">
-        <div class="nav">
-            <a href="{{ route('timeline') }}"
-               class="nav-link {{ Route::currentRouteName() == 'timeline' ? 'active' : '' }}">Timeline</a>
-            <a href="{{ route('messages') }}"
-               class="nav-link {{ Route::currentRouteName() == 'messages' ? 'active' : '' }}">Messages</a>
-            <a href="{{ route('sources') }}" class="nav-link" {{ Route::currentRouteName() == 'sources' ? 'active' : '' }}>Sources</a>
-        </div>
-    </header>
+<header class="group nav-container">
+    <div class="nav">
+        <a href="{{ route('timeline') }}"
+           class="nav-link {{ Route::currentRouteName() == 'timeline' ? 'active' : '' }}">Timeline</a>
+        <a href="{{ route('messages') }}"
+           class="nav-link {{ Route::currentRouteName() == 'messages' ? 'active' : '' }}">Messages</a>
+        <a href="{{ route('sources') }}" class="nav-link" {{ Route::currentRouteName() == 'sources' ? 'active' : '' }}>Sources</a>
+    </div>
+</header>
 
+<div class="my-container">
     <div class="body">
         @yield('content')
     </div>
-
-    <footer>
-        <p>Copyright © 2018 of Yun Ha Seo</p>
-    </footer>
 </div>
 
+<footer>
+    <p>Copyright © 2018 of Yun Ha Seo</p>
+</footer>
+
+<script>
+    // $(document).ready(function() {
+    //    function goto(link) {
+    //
+    //     }
+    // });
+</script>
 {{-- Javascript Libraries --}}
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
