@@ -1,0 +1,19 @@
+.messages {
+  background-image: url(../images/messages-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 150px;
+  position: relative;
+  min-height: 100vh;
+
+  .message-item {
+    cursor: pointer;
+    background: none;
+    border: none;
+    position: absolute;
+
+    img {
+      width: 100%;
+    }
+  }
+}

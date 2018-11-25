@@ -9614,12 +9614,12 @@ footer {
 }
 
 .page-timeline .timeline {
+  padding: 1000px 300px 815px 300px;
   margin-bottom: 100vh;
   position: relative;
   color: #ffffff;
   background-image: url(../images/timeline-bg-full.png);
   background-repeat: no-repeat;
-  padding: 1000px 300px 815px 300px;
   background-size: cover;
 }
 
@@ -9833,6 +9833,26 @@ footer {
 .page-sources-footer > p {
   position: absolute;
   bottom: 20px;
+}
+
+.messages {
+  background-image: url(../images/messages-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 150px;
+  position: relative;
+  min-height: 100vh;
+}
+
+.messages .message-item {
+  cursor: pointer;
+  background: none;
+  border: none;
+  position: absolute;
+}
+
+.messages .message-item img {
+  width: 100%;
 }
 
 .nav-container {

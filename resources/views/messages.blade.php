@@ -1,24 +1,46 @@
 @extends('layouts.app')
 @section('content')
 
-    <div class="page-introduction">
-        <img class="page-icon" src="{{ asset('images/papership.png') }}" alt="Sewol yellow ribbon">
-        <h1 class="page-title">Messages</h1>
-        <p class="col-md-5 page-subtitle" id="page-subtitle-timeline">
-            Leave a messages for the families and victims.
-            <br>
-            You may view messages from other visitors as well.</p>
+    <div data-aos="fade" data-aos-easing="linear" data-aos-duration="1000">
+        <div class="offset-md-1 page-introduction">
+            <img class="page-icon" src="{{ asset('images/papership.png') }}" alt="Sewol yellow ribbon">
+            <h1 class="page-title">Messages</h1>
+            <p class="col-md-5 page-subtitle" id="page-subtitle-timeline">
+                Leave a messages for the families and victims.
+                <br>
+                You may view messages from other visitors as well.</p>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                Leave a message
+            </button>
+        </div>
     </div>
 
-    @foreach($messages_items as $message)
-        {{-- todo: format date --}}
-        <p>{{ $message->date }}: {{ $message->text }}</p>
-    @endforeach
+    <div class="messages">
+
+        @foreach($messages_items as $message)
+            <button class="message-item" type="button" data-toggle="modal" data-target="#messageRead" style="top: {{ rand(10, 80) }}%; left: {{ rand(0, 80) }}%; width: {{ rand(5, 7) }}%; transform: rotate(-{{ rand(0, 7) }}deg);">
+                <img src="{{ asset('images/messages-boat.png') }}">
+            </button>
+        @endforeach
+
+    </div>
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
         Launch demo modal
     </button>
+
+    {{-- Modal for messageRead --}}
+    <div class="modal" id="messageRead"  tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>hello world</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -80,6 +102,24 @@
 @endsection
 @section('scripts')
 
+    <script>
+        // $(document).ready(function() {
+        //     AOS.init({
+        //         once: true
+        //     });
+        //
+        //     $('.message-item').click(function(e) {
+        //         e.preventDefault();
+        //         $.ajax({
+        //             url: 'php/MessageGet.app',
+        //             dataType: 'html',
+        //             success: function(result) {
+        //                 $('#messageRead .modal-body').html(result);
+        //             }
+        //         })
+        //     })
+        // });
+    </script>
     <script src="{{ mix('js/voice-recognition.js') }}"></script>
 
 @append
