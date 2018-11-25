@@ -2,5 +2,6 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/voice-recognition.js": "/js/voice-recognition.js",
-    "/js/timeline.js": "/js/timeline.js"
+    "/js/timeline.js": "/js/timeline.js",
+    "/js/messages.js": "/js/messages.js"
 }

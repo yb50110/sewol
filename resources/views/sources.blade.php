@@ -57,14 +57,9 @@
 
     <script>
         $(document).ready(function () {
-            AOS.init({
-                once: true
-            });
-
             // custom css for body for background image
             $('footer').addClass('page-sources-footer');
         });
-
     </script>
 
 @append

@@ -1,8 +1,4 @@
 $(document).ready(function () {
-    AOS.init({
-        once: true
-    });
-
     // custom css for body for background image
     $('body').addClass('page-timeline');
 

@@ -19,7 +19,7 @@
     <div class="messages">
 
         @foreach($messages_items as $message)
-            <button class="message-item" type="button" data-toggle="modal" data-target="#messageRead" style="top: {{ rand(10, 80) }}%; left: {{ rand(0, 80) }}%; width: {{ rand(5, 7) }}%; transform: rotate(-{{ rand(0, 7) }}deg);">
+            <button class="message-item" message-id="{{ $message->id }}" type="button" data-toggle="modal" data-target="#messageRead" style="top: {{ rand(10, 80) }}%; left: {{ rand(0, 80) }}%; width: {{ rand(5, 7) }}%; transform: rotate(-{{ rand(0, 7) }}deg);">
                 <img src="{{ asset('images/messages-boat.png') }}">
             </button>
         @endforeach
@@ -102,24 +102,7 @@
 @endsection
 @section('scripts')
 
-    <script>
-        // $(document).ready(function() {
-        //     AOS.init({
-        //         once: true
-        //     });
-        //
-        //     $('.message-item').click(function(e) {
-        //         e.preventDefault();
-        //         $.ajax({
-        //             url: 'php/MessageGet.app',
-        //             dataType: 'html',
-        //             success: function(result) {
-        //                 $('#messageRead .modal-body').html(result);
-        //             }
-        //         })
-        //     })
-        // });
-    </script>
-    <script src="{{ mix('js/voice-recognition.js') }}"></script>
+    <script src="{{ asset('js/voice-recognition.js') }}"></script>
+    <script src="{{ asset('js/messages.js') }}"></script>
 
 @append
