@@ -1,0 +1,103 @@
+<div class="modal" id="createMessage" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            {{--<form id="createMessage-form" method="POST" action="{{ route('messages.store') }}">--}}
+                @csrf
+                {{-- BEGIN MESSAGE INPUT --}}
+                <div class="center" id="headline">
+                    <div id="info">
+                        <p id="info_start">Click to begin speaking.</p>
+                        <p id="info_speak_now">Speak now.</p>
+                        <p id="info_no_speech">No speech was detected. You may need to adjust your
+                            <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+                                microphone settings</a>.</p>
+                        <p id="info_no_microphone" style="display:none">
+                            No microphone was found. Ensure that a microphone is installed and that
+                            <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+                                microphone settings</a> are configured correctly.</p>
+                        <p id="info_allow">Click the "Allow" button above to enable your microphone.</p>
+                        <p id="info_denied">Permission to use microphone was denied.</p>
+                        <p id="info_blocked">Permission to use microphone is blocked. To change,
+                            go to chrome://settings/contentExceptions#media-stream</p>
+                        <p id="info_upgrade">Web Speech API is not supported by this browser.
+                            Upgrade to <a href="//www.google.com/chrome">Chrome</a>
+                            version 25 or later.</p>
+                    </div>
+                    <div id="results">
+                        <textarea name="final_span" id="final_span" class="final" rows="10" required></textarea>
+                    </div>
+                </div>
+                {{-- END MESSAGE INPUT --}}
+                <div class="button-group">
+                    <p class="button--record" id="start_button">talk to write</p>
+                    <br><br><br>
+                    <button class="button--save" disabled="disabled" onclick="createMessage('{{ route('messages.store') }}')">save</button>
+                    <br>
+                    <button class="button--close" data-dismiss="modal">cancel</button>
+                </div>
+            {{--</form>--}}
+        </div>
+    </div>
+</div>
+
+<script>
+    function createMessage(url) {
+        $.ajax({
+            url: url,
+            method: 'POST',
+            dataType: 'text',
+            data: {
+                'text': $('#final_span').val(),
+            },
+            success: function(data) {
+                // show the group of .success-image
+                // the order of images shown within this group is done through css
+                $('.success-image').fadeIn();
+                $('.success-image-background').delay(5000).fadeOut();
+
+                // close createMessage modal and clear textarea
+                $('#createMessage').delay(1000).modal('toggle');
+                $('#final_span').delay(1000).val('');
+
+                // hide all boats, text
+                $('.messages').css('bottom', '-100%');
+                $('.message-item').hide();
+                $('.nav').hide();
+                $('.page-introduction').hide();
+                $('.message-button').hide();
+
+                // slide water from bottom
+                setTimeout(function() {
+                    $('.messages').animate({
+                        bottom: '0'
+                    }, 4000)
+                }, 5000);  // todo: change this after all animation is completed
+
+                // once water is there...
+                setTimeout(function() {
+                    // shuffle location of boats
+                    var messages = $('.message-item').toArray();
+                    messages.forEach(function(item, index) {
+                        $(this[index]).css({
+                            'top': Math.floor(Math.random() * 80) + 10 + 'px',
+                            'left': Math.floor(Math.random() * 80) + 'px',
+                            'width': Math.floor(Math.random() * 80) + 50 + 'px',
+                            'transform': 'rotate(-' + Math.floor(Math.random() * 7) + 'deg)',
+                        })
+                    }, messages);
+                    $('.message-item').fadeIn();
+
+                    // show nav and page introduction
+                    $('.nav').fadeIn();
+                    $('.page-introduction').fadeIn();
+                    $('.message-button').fadeIn();
+
+                    $('.success-image-final').css('z-index', 'unset');
+                }, 10000);
+
+                // reload page:
+                // $('#createMessage-form').submit();
+            }
+        });
+    }
+</script>

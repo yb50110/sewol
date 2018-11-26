@@ -109,6 +109,7 @@
 
   .page-title {
     opacity: 0;
+    height: 20px;
     animation: animation-fadein 2s forwards;
     animation-delay: 10s;
   }
@@ -116,9 +117,4 @@
   .animation-fadein {
     animation: animation-fadein 0.25s;
   }
-}
-
-@keyframes animation-fadein {
-  0%    {opacity: 0;}
-  100%  {opacity: 1;}
 }

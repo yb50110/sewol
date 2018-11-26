@@ -1,6 +1,10 @@
 .page-introduction-messages {
   text-align: center;
   margin: auto;
+
+  .page-subtitle {
+    min-height: 80px;
+  }
 }
 
 .messages {
@@ -8,14 +12,17 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 100px 150px;
-  position: relative;
+  position: absolute;
+  width: 100%;
   min-height: calc(100vh - 384px); // 384 height of nav and intro
 
   .message-item {
-    cursor: pointer;
-    background: none;
-    border: none;
+    animation: animation-fadein 1s forwards;
     position: absolute;
+    background: none;
+    cursor: pointer;
+    border: none;
+    opacity: 0;
 
     &:focus {
       outline: none;
@@ -39,7 +46,7 @@ button[class*="message-button"] {
     opacity: 0.5;
   }
 
-  &[class*="--yellow"] {
+  &[class*='--yellow'] {
     color: $yellow !important;
     margin-left: -100px;
     position: fixed;
@@ -51,24 +58,52 @@ button[class*="message-button"] {
 
 .modal {
   .modal-dialog {
+    position: absolute;
     max-width: unset;
     width: 600px;
+    top: 50%;
+    left: 50%;
+    margin-top: -400px;
+    margin-left: -300px;
 
     .modal-content {
       background-image: url('../images/messages-letter.png');
+      padding: 90px 100px 90px 90px;
       background-repeat: no-repeat;
       background-size: contain;
-      padding: 120px 100px;
       height: 800px;
       border: none;
+
+      textarea.final {
+        background: transparent;
+        outline: none;
+        border: none;
+        width: 100%;
+        height: 600px !important;
+      }
 
       .button-group {
         position: fixed;
         right: -150px;
-        top: 50%;
+        top: 40%;
 
-        .button-close {
+        [class*='button--'] {
+          @extend a;
+          cursor: pointer;
+          display: block;
+          float: right;
 
+          &[class*='close'] {
+            margin-top: 15px;
+          }
+          &[disabled='disabled'] {
+            cursor: not-allowed;
+            color: $gray-light;
+            &:hover { opacity: 1; }
+          }
+          &:focus {
+            outline: none;
+          }
         }
       }
     }
@@ -78,5 +113,31 @@ button[class*="message-button"] {
   background-color: #ffffff;
   &.show {
     opacity: 1;
+  }
+}
+
+.success-image {
+  display: none;
+
+  .success-image-background {
+    z-index: 1050; // 1040 is modal background
+    background: #ffffff;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+
+  .success-image-final {
+    z-index: 1051; // 1040 is modal background
+    animation: animation-fadein 1s forwards;
+    animation-delay: 2s;
+    position: absolute;
+    margin-left: -45px;
+    width: 100px;
+    left: 50%;
+    top: 40%;
+    opacity: 0;
   }
 }

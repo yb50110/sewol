@@ -13,6 +13,9 @@ $(document).ready(function () {
         if (i < (array.length)) {
             setTimeout(Slide, 20);
         } else {
+            // if end
+            $('.page-icon').attr('src', '../images/timeline-ribbon.png');
+            $('.page-title').html('Sewol Ferry Incident');
             // $('.page-timeline').css('background-image', 'url(\'../images/timeline-bg-tophalf.png\')');
         }
     }

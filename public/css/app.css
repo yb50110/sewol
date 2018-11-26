@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, .modal .modal-dialog .modal-content .button-group [class*='button--'], abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -53,14 +53,14 @@ body {
   background-size: contain;
 }
 
-a {
+a, .modal .modal-dialog .modal-content .button-group [class*='button--'] {
   font-weight: 700;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   color: #000000;
 }
 
-a:hover {
+a:hover, .modal .modal-dialog .modal-content .button-group :hover[class*='button--'] {
   text-decoration: none;
   color: #000000;
   opacity: 0.5;
@@ -86,6 +86,24 @@ footer {
   padding: 20px 50px;
   font-size: 0.75em;
   color: #878787;
+}
+
+@-webkit-keyframes animation-fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animation-fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .page-introduction {
@@ -227,6 +245,7 @@ footer {
 
 .page-timeline .page-title {
   opacity: 0;
+  height: 20px;
   -webkit-animation: animation-fadein 2s forwards;
           animation: animation-fadein 2s forwards;
   -webkit-animation-delay: 10s;
@@ -236,24 +255,6 @@ footer {
 .page-timeline .animation-fadein {
   -webkit-animation: animation-fadein 0.25s;
           animation: animation-fadein 0.25s;
-}
-
-@-webkit-keyframes animation-fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes animation-fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 [class*='source-container'] {
@@ -341,20 +342,28 @@ footer {
   margin: auto;
 }
 
+.page-introduction-messages .page-subtitle {
+  min-height: 80px;
+}
+
 .messages {
   background-image: url(../images/messages-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 100px 150px;
-  position: relative;
+  position: absolute;
+  width: 100%;
   min-height: calc(100vh - 384px);
 }
 
 .messages .message-item {
-  cursor: pointer;
-  background: none;
-  border: none;
+  -webkit-animation: animation-fadein 1s forwards;
+          animation: animation-fadein 1s forwards;
   position: absolute;
+  background: none;
+  cursor: pointer;
+  border: none;
+  opacity: 0;
 }
 
 .messages .message-item:focus {
@@ -380,7 +389,7 @@ button[class*="message-button"]:hover {
   opacity: 0.5;
 }
 
-button[class*="message-button"][class*="--yellow"] {
+button[class*="message-button"][class*='--yellow'] {
   color: #FFDB2B !important;
   margin-left: -100px;
   position: fixed;
@@ -390,23 +399,59 @@ button[class*="message-button"][class*="--yellow"] {
 }
 
 .modal .modal-dialog {
+  position: absolute;
   max-width: unset;
   width: 600px;
+  top: 50%;
+  left: 50%;
+  margin-top: -400px;
+  margin-left: -300px;
 }
 
 .modal .modal-dialog .modal-content {
   background-image: url("../images/messages-letter.png");
+  padding: 90px 100px 90px 90px;
   background-repeat: no-repeat;
   background-size: contain;
-  padding: 120px 100px;
   height: 800px;
   border: none;
+}
+
+.modal .modal-dialog .modal-content textarea.final {
+  background: transparent;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 600px !important;
 }
 
 .modal .modal-dialog .modal-content .button-group {
   position: fixed;
   right: -150px;
-  top: 50%;
+  top: 40%;
+}
+
+.modal .modal-dialog .modal-content .button-group [class*='button--'] {
+  cursor: pointer;
+  display: block;
+  float: right;
+}
+
+.modal .modal-dialog .modal-content .button-group [class*='button--'][class*='close'] {
+  margin-top: 15px;
+}
+
+.modal .modal-dialog .modal-content .button-group [class*='button--'][disabled='disabled'] {
+  cursor: not-allowed;
+  color: #D5D5D5;
+}
+
+.modal .modal-dialog .modal-content .button-group [class*='button--'][disabled='disabled']:hover {
+  opacity: 1;
+}
+
+.modal .modal-dialog .modal-content .button-group [class*='button--']:focus {
+  outline: none;
 }
 
 .modal-backdrop {
@@ -415,6 +460,34 @@ button[class*="message-button"][class*="--yellow"] {
 
 .modal-backdrop.show {
   opacity: 1;
+}
+
+.success-image {
+  display: none;
+}
+
+.success-image .success-image-background {
+  z-index: 1050;
+  background: #ffffff;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.success-image .success-image-final {
+  z-index: 1051;
+  -webkit-animation: animation-fadein 1s forwards;
+          animation: animation-fadein 1s forwards;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  position: absolute;
+  margin-left: -45px;
+  width: 100px;
+  left: 50%;
+  top: 40%;
+  opacity: 0;
 }
 
 .nav-container {

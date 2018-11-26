@@ -22,9 +22,19 @@ $(document).ready(function() {
                 var text = result.text;
                 var created_at = result.created_at;
 
-                $('.modal-letter p').html(text);
+                $('#readMessage p').html(text);
             }
         })
-    })
+    });
 
+    /**
+     * Disable .button--save unless textarea is filled
+     */
+    $('#final_span').keyup(function() {
+        var value=$.trim($(this).val());
+        if(value.length>0)
+        {
+            $('.button--save').prop("disabled", false);
+        }
+    });
 });
