@@ -1,10 +1,15 @@
+.page-introduction-messages {
+  text-align: center;
+  margin: auto;
+}
+
 .messages {
   background-image: url(../images/messages-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 100px 150px;
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - 384px); // 384 height of nav and intro
 
   .message-item {
     cursor: pointer;
@@ -12,8 +17,66 @@
     border: none;
     position: absolute;
 
+    &:focus {
+      outline: none;
+    }
+
     img {
       width: 100%;
     }
+  }
+}
+
+button[class*="message-button"] {
+  font-weight: 700;
+  transition: 0.2s;
+  border: none !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+  background: none !important;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &[class*="--yellow"] {
+    color: $yellow !important;
+    margin-left: -100px;
+    position: fixed;
+    bottom: 20px;
+    width: 200px;
+    left: 50%;
+  }
+}
+
+.modal {
+  .modal-dialog {
+    max-width: unset;
+    width: 600px;
+
+    .modal-content {
+      background-image: url('../images/messages-letter.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      padding: 120px 100px;
+      height: 800px;
+      border: none;
+
+      .button-group {
+        position: fixed;
+        right: -150px;
+        top: 50%;
+
+        .button-close {
+
+        }
+      }
+    }
+  }
+}
+.modal-backdrop {
+  background-color: #ffffff;
+  &.show {
+    opacity: 1;
   }
 }

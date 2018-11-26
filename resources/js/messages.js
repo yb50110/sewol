@@ -1,5 +1,11 @@
 $(document).ready(function() {
+    // hide for messages page
+    $('footer').remove();
 
+    /**
+     * Gets respective letter information
+     * This allows asynchronous retrieval of data rather than loading all letter's data on page load
+     */
     $('.message-item').click(function(e) {
         e.preventDefault();
         $.ajax({
@@ -16,7 +22,7 @@ $(document).ready(function() {
                 var text = result.text;
                 var created_at = result.created_at;
 
-                $('#messageRead .modal-body p').html(text);
+                $('.modal-letter p').html(text);
             }
         })
     })
