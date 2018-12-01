@@ -1,4 +1,4 @@
-<div class="modal" id="createMessage" role="dialog" aria-hidden="true">
+<div class="modal fade" id="createMessage" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             {{--<form id="createMessage-form" method="POST" action="{{ route('messages.store') }}">--}}
@@ -31,7 +31,7 @@
                 <div class="button-group">
                     <p class="button--record" id="start_button">talk to write</p>
                     <br><br><br>
-                    <button class="button--save" disabled="disabled" onclick="createMessage('{{ route('messages.store') }}')">save</button>
+                    <button class="button--save" disabled="disabled" onclick="createMessage('{{ route('messages.store') }}', '{{ asset("images/fold.gif") }}')">save</button>
                     <br>
                     <button class="button--close" data-dismiss="modal">cancel</button>
                 </div>
@@ -41,37 +41,37 @@
 </div>
 
 <script>
-    function createMessage(url) {
+    function createMessage(url, src) {
         $.ajax({
             url: url,
             method: 'POST',
-            dataType: 'text',
+            dataType: 'json',
             data: {
                 'text': $('#final_span').val(),
             },
             success: function(data) {
                 // show the group of .success-image
                 // the order of images shown within this group is done through css
-                $('.success-image').fadeIn();
-                $('.success-image-background').delay(5000).fadeOut();
+                $('.success-image').delay(1000).fadeIn();
+                $('.success-image').append('<img class="success-image-start" src=' + src + '>');
+                $('.success-image-start').delay(6000).fadeOut();
+                $('.success-image-start').delay(6000).delete();
+                $('.success-image-background').delay(7000).fadeOut();
 
                 // close createMessage modal and clear textarea
-                $('#createMessage').delay(1000).modal('toggle');
+                $('#createMessage').delay(1000).modal('hide');
                 $('#final_span').delay(1000).val('');
 
                 // hide all boats, text
-                $('.messages').css('bottom', '-100%');
                 $('.message-item').hide();
-                $('.nav').hide();
-                $('.page-introduction').hide();
-                $('.message-button').hide();
 
                 // slide water from bottom
+                // water should be already slid down
                 setTimeout(function() {
                     $('.messages').animate({
-                        bottom: '0'
+                        top: '384px' // height of nav and page-intro
                     }, 4000)
-                }, 5000);  // todo: change this after all animation is completed
+                }, 4000);
 
                 // once water is there...
                 setTimeout(function() {
@@ -79,24 +79,24 @@
                     var messages = $('.message-item').toArray();
                     messages.forEach(function(item, index) {
                         $(this[index]).css({
-                            'top': Math.floor(Math.random() * 80) + 10 + 'px',
-                            'left': Math.floor(Math.random() * 80) + 'px',
-                            'width': Math.floor(Math.random() * 80) + 50 + 'px',
+                            'top': Math.floor(Math.random() * 75) + 15 + '%',
+                            'left': Math.floor(Math.random() * 80) + 10 + '%',
+                            'width': Math.floor(Math.random() * 30) + 50 + 'px',
                             'transform': 'rotate(-' + Math.floor(Math.random() * 7) + 'deg)',
+                            'animation-delay': '1s',
                         })
                     }, messages);
                     $('.message-item').fadeIn();
 
                     // show nav and page introduction
+                    $('.page-introduction').animate({
+                        marginTop: '0'
+                    }, 3000);
                     $('.nav').fadeIn();
-                    $('.page-introduction').fadeIn();
-                    $('.message-button').fadeIn();
+                    $('[class*="message-button"]').delay(1000).fadeIn();
 
                     $('.success-image-final').css('z-index', 'unset');
-                }, 10000);
-
-                // reload page:
-                // $('#createMessage-form').submit();
+                }, 8000);
             }
         });
     }

@@ -25,9 +25,9 @@ class MessageController extends Controller
      */
     public function store(MessageRequest $request)
     {
-        Message::create([
+        $message = Message::create([
             'text' => $request['text'],
         ]);
-        return redirect()->route('messages');
+        return $message;
     }
 }

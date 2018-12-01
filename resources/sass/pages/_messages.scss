@@ -8,13 +8,24 @@
 }
 
 .messages {
-  background-image: url(../images/messages-bg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
   padding: 100px 150px;
   position: absolute;
   width: 100%;
   min-height: calc(100vh - 384px); // 384 height of nav and intro
+
+  .messages-background {
+    background-image: url(../images/messages-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    animation: animation-fadein 1s forwards;
+    animation-delay: 1s;
+  }
 
   .message-item {
     animation: animation-fadein 1s forwards;
@@ -41,12 +52,16 @@ button[class*="message-button"] {
   color: #000000 !important;
   box-shadow: none !important;
   background: none !important;
+  opacity: 0;
+  animation: animation-fadein 1s forwards;
+  animation-delay: 1s;
 
   &:hover {
     opacity: 0.5;
   }
 
   &[class*='--yellow'] {
+    text-shadow: 0px 0px 1px black;
     color: $yellow !important;
     margin-left: -100px;
     position: fixed;
@@ -129,15 +144,24 @@ button[class*="message-button"] {
     top: 0;
   }
 
+  .success-image-start {
+    z-index: 1051; // 1040 is modal background
+    position: absolute;
+    margin-left: -125px;
+    width: 250px;
+    left: 50%;
+    top: 42%;
+  }
   .success-image-final {
     z-index: 1051; // 1040 is modal background
-    animation: animation-fadein 1s forwards;
-    animation-delay: 2s;
+    transform: rotate(-5deg);
     position: absolute;
-    margin-left: -45px;
+    animation: animation-fadein 1s forwards;
+    animation-delay: 5s;
+    margin-left: -50px;
     width: 100px;
-    left: 50%;
-    top: 40%;
     opacity: 0;
+    left: 50%;
+    top: 47%;
   }
 }

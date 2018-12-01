@@ -347,13 +347,26 @@ footer {
 }
 
 .messages {
-  background-image: url(../images/messages-bg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
   padding: 100px 150px;
   position: absolute;
   width: 100%;
   min-height: calc(100vh - 384px);
+}
+
+.messages .messages-background {
+  background-image: url(../images/messages-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  -webkit-animation: animation-fadein 1s forwards;
+          animation: animation-fadein 1s forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 .messages .message-item {
@@ -383,6 +396,11 @@ button[class*="message-button"] {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   background: none !important;
+  opacity: 0;
+  -webkit-animation: animation-fadein 1s forwards;
+          animation: animation-fadein 1s forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 button[class*="message-button"]:hover {
@@ -390,6 +408,7 @@ button[class*="message-button"]:hover {
 }
 
 button[class*="message-button"][class*='--yellow'] {
+  text-shadow: 0px 0px 1px black;
   color: #FFDB2B !important;
   margin-left: -100px;
   position: fixed;
@@ -476,18 +495,29 @@ button[class*="message-button"][class*='--yellow'] {
   top: 0;
 }
 
+.success-image .success-image-start {
+  z-index: 1051;
+  position: absolute;
+  margin-left: -125px;
+  width: 250px;
+  left: 50%;
+  top: 42%;
+}
+
 .success-image .success-image-final {
   z-index: 1051;
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+  position: absolute;
   -webkit-animation: animation-fadein 1s forwards;
           animation: animation-fadein 1s forwards;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-  position: absolute;
-  margin-left: -45px;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+  margin-left: -50px;
   width: 100px;
-  left: 50%;
-  top: 40%;
   opacity: 0;
+  left: 50%;
+  top: 47%;
 }
 
 .nav-container {

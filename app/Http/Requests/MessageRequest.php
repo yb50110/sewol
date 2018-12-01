@@ -24,7 +24,7 @@ class MessageRequest extends FormRequest
     public function rules()
     {
         return [
-            'final_span' => 'required'
+            'text' => 'required'
         ];
     }
 }
