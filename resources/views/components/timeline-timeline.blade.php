@@ -1,4 +1,5 @@
 <div class="timeline">
+    <div class="timeline-background"></div>
     <div class="timeline-line"></div>
 
     <div data-aos="fade" data-aos-easing="linear" data-aos-duration="1000">

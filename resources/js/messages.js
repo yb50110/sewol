@@ -76,7 +76,7 @@ $(document).ready(function () {
         // slide intro down
         $('.page-introduction').animate({
             marginTop: '0'
-        }, 3000);
+        }, 2000);
 
         // slide water up
         $('.messages').animate({

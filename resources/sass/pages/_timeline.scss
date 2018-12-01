@@ -1,13 +1,23 @@
 .page-timeline {
-
   .timeline {
     padding: 1000px 300px 815px 300px;
     margin-bottom: 100vh;
     position: relative;
     color: #ffffff;
-    background-image: url(../images/timeline-bg-full.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+
+    .timeline-background {
+      background-image: url(../images/timeline-bg-full.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      animation: animation-fadein 1s forwards;
+      animation-delay: 10s;
+    }
 
     .timeline-line {
       border-right: 1px solid #FFDB2B;
@@ -101,19 +111,22 @@
   }
 
   // Animation
+  .nav {
+    opacity: 0;
+    animation: animation-fadein 1s forwards;
+    animation-delay: 14s;
+  }
   .page-icon {
     opacity: 0;
     animation: animation-fadein 1s forwards;
-    animation-delay: 12s;
+    animation-delay: 13s;
   }
-
   .page-title {
     opacity: 0;
     height: 20px;
     animation: animation-fadein 2s forwards;
-    animation-delay: 10s;
+    animation-delay: 12s;
   }
-
   .animation-fadein {
     animation: animation-fadein 0.25s;
   }

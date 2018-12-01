@@ -137,9 +137,22 @@ footer {
   margin-bottom: 100vh;
   position: relative;
   color: #ffffff;
+}
+
+.page-timeline .timeline .timeline-background {
   background-image: url(../images/timeline-bg-full.png);
   background-repeat: no-repeat;
   background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  -webkit-animation: animation-fadein 1s forwards;
+          animation: animation-fadein 1s forwards;
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
 }
 
 .page-timeline .timeline .timeline-line {
@@ -235,12 +248,20 @@ footer {
   width: 70px;
 }
 
+.page-timeline .nav {
+  opacity: 0;
+  -webkit-animation: animation-fadein 1s forwards;
+          animation: animation-fadein 1s forwards;
+  -webkit-animation-delay: 14s;
+          animation-delay: 14s;
+}
+
 .page-timeline .page-icon {
   opacity: 0;
   -webkit-animation: animation-fadein 1s forwards;
           animation: animation-fadein 1s forwards;
-  -webkit-animation-delay: 12s;
-          animation-delay: 12s;
+  -webkit-animation-delay: 13s;
+          animation-delay: 13s;
 }
 
 .page-timeline .page-title {
@@ -248,8 +269,8 @@ footer {
   height: 20px;
   -webkit-animation: animation-fadein 2s forwards;
           animation: animation-fadein 2s forwards;
-  -webkit-animation-delay: 10s;
-          animation-delay: 10s;
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
 }
 
 .page-timeline .animation-fadein {
