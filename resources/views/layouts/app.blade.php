@@ -7,9 +7,9 @@
 
     <title>Sewol Ferry</title>
 
-{{-- Favicon --}}
+    {{-- Favicon --}}
 
-<!-- Styles -->
+    <!-- Styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -19,13 +19,7 @@
 <body>
 
 <header class="group nav-container">
-    <div class="nav">
-        <a href="{{ route('timeline') }}"
-           class="nav-link {{ Route::currentRouteName() == 'timeline' ? 'active' : '' }}">Timeline</a>
-        <a href="{{ route('messages') }}"
-           class="nav-link {{ Route::currentRouteName() == 'messages' ? 'active' : '' }}">Messages</a>
-        <a href="{{ route('sources') }}" class="nav-link" {{ Route::currentRouteName() == 'sources' ? 'active' : '' }}>Sources</a>
-    </div>
+    @include('components.nav')
 </header>
 
 <div class="body">

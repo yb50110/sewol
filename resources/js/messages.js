@@ -34,6 +34,8 @@ $(document).ready(function () {
         var value = $.trim($(this).val());
         if (value.length > 0) {
             $('.button--save').prop("disabled", false);
+        } else {
+            $('.button--save').prop("disabled", true);
         }
     });
 

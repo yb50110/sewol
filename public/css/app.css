@@ -132,14 +132,14 @@ footer {
   font-size: 1.5em;
 }
 
-.page-timeline .timeline {
+.timeline {
   padding: 1000px 300px 815px 300px;
   margin-bottom: 100vh;
   position: relative;
   color: #ffffff;
 }
 
-.page-timeline .timeline .timeline-background {
+.timeline .timeline-background {
   background-image: url(../images/timeline-bg-full.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -148,14 +148,9 @@ footer {
   width: 100%;
   left: 0;
   top: 0;
-  opacity: 0;
-  -webkit-animation: animation-fadein 1s forwards;
-          animation: animation-fadein 1s forwards;
-  -webkit-animation-delay: 10s;
-          animation-delay: 10s;
 }
 
-.page-timeline .timeline .timeline-line {
+.timeline .timeline-line {
   border-right: 1px solid #FFDB2B;
   height: calc(100% - 895px);
   position: absolute;
@@ -163,12 +158,17 @@ footer {
   left: 50%;
 }
 
-.page-timeline .timeline .timeline-item {
+.timeline .timeline-item-container {
+  position: relative;
+  opacity: 0;
+}
+
+.timeline .timeline-item-container .timeline-item {
   margin-bottom: 100px;
   padding: 0 0 0 80px;
 }
 
-.page-timeline .timeline .timeline-item:before {
+.timeline .timeline-item-container .timeline-item:before {
   background-image: url("../images/timeline-dot.png");
   background-size: contain;
   position: absolute;
@@ -179,38 +179,38 @@ footer {
   top: 5px;
 }
 
-.page-timeline .timeline .timeline-item.left {
+.timeline .timeline-item-container .timeline-item.left {
   padding: 0 80px 0 0;
   text-align: right;
 }
 
-.page-timeline .timeline .timeline-item.left:before {
+.timeline .timeline-item-container .timeline-item.left:before {
   left: unset;
   right: -10px;
 }
 
-.page-timeline .timeline .timeline-item.center {
+.timeline .timeline-item-container .timeline-item.center {
   text-align: center;
 }
 
-.page-timeline .timeline .timeline-item .yellow {
+.timeline .timeline-item-container .timeline-item .yellow {
   font-weight: 700;
   color: #FFDB2B;
   display: block;
   margin: 0 0 10px 0;
 }
 
-.page-timeline .timeline .timeline-item .bold {
+.timeline .timeline-item-container .timeline-item .bold {
   font-weight: 700;
   display: block;
   margin: 5px 0;
 }
 
-.page-timeline .timeline img {
+.timeline .timeline-item-container img {
   position: absolute;
 }
 
-.page-timeline .timeline .timeline-conclusion {
+.timeline .timeline-conclusion {
   top: calc(100% + 150px);
   margin-left: -300px;
   text-align: center;
@@ -220,7 +220,7 @@ footer {
   left: 50%;
 }
 
-.page-timeline .timeline .timeline-conclusion:before {
+.timeline .timeline-conclusion:before {
   background-image: url("../images/timeline-dot.png");
   -webkit-transform: translateX(-25px);
           transform: translateX(-25px);
@@ -233,22 +233,22 @@ footer {
   top: -45px;
 }
 
-.page-timeline .timeline .timeline-conclusion > p {
+.timeline .timeline-conclusion > p {
   margin: 20px 0;
 }
 
-.page-timeline .timeline .timeline-conclusion img {
+.timeline .timeline-conclusion img {
   margin: 0 auto 30px auto;
   position: static;
   display: block;
 }
 
-.page-timeline .timeline .timeline-conclusion img:last-of-type {
+.timeline .timeline-conclusion img:last-of-type {
   margin: 70px auto 10px auto;
   width: 70px;
 }
 
-.page-timeline .nav {
+.nav-timeline {
   opacity: 0;
   -webkit-animation: animation-fadein 1s forwards;
           animation: animation-fadein 1s forwards;
@@ -256,7 +256,7 @@ footer {
           animation-delay: 14s;
 }
 
-.page-timeline .page-icon {
+.page-introduction-timeline .page-icon {
   opacity: 0;
   -webkit-animation: animation-fadein 1s forwards;
           animation: animation-fadein 1s forwards;
@@ -264,7 +264,7 @@ footer {
           animation-delay: 13s;
 }
 
-.page-timeline .page-title {
+.page-introduction-timeline .page-title {
   opacity: 0;
   height: 20px;
   -webkit-animation: animation-fadein 2s forwards;
@@ -273,7 +273,15 @@ footer {
           animation-delay: 12s;
 }
 
-.page-timeline .animation-fadein {
+.timeline-background {
+  opacity: 0;
+  -webkit-animation: animation-fadein 1s forwards;
+          animation: animation-fadein 1s forwards;
+  -webkit-animation-delay: 11s;
+          animation-delay: 11s;
+}
+
+.animation-fadein {
   -webkit-animation: animation-fadein 0.25s;
           animation: animation-fadein 0.25s;
 }
@@ -368,6 +376,7 @@ footer {
 }
 
 .messages {
+  background-color: #000000;
   padding: 100px 150px;
   position: absolute;
   width: 100%;
@@ -379,6 +388,7 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
+  max-height: 980px;
   height: 100%;
   width: 100%;
   left: 0;
@@ -516,13 +526,14 @@ button[class*="message-button"][class*='--yellow'] {
   top: 0;
 }
 
-.success-image .success-image-start {
+.success-image [class*='success-image-start'] {
   z-index: 1051;
   position: absolute;
-  margin-left: -125px;
-  width: 250px;
+  margin-left: -80px;
+  width: 160px;
   left: 50%;
-  top: 42%;
+  top: 45%;
+  display: none;
 }
 
 .success-image .success-image-final {

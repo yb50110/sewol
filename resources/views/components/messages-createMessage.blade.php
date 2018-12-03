@@ -31,7 +31,7 @@
                 <div class="button-group">
                     <p class="button--record" id="start_button">talk to write</p>
                     <br><br><br>
-                    <button class="button--save" disabled="disabled" onclick="createMessage('{{ route('messages.store') }}', '{{ asset("images/fold.gif") }}')">save</button>
+                    <button class="button--save" disabled="disabled" onclick="createMessage('{{ route('messages.store') }}')">save</button>
                     <br>
                     <button class="button--close" data-dismiss="modal">cancel</button>
                 </div>
@@ -41,7 +41,7 @@
 </div>
 
 <script>
-    function createMessage(url, src) {
+    function createMessage(url) {
         $.ajax({
             url: url,
             method: 'POST',
@@ -50,12 +50,14 @@
                 'text': $('#final_span').val(),
             },
             success: function(data) {
-                // show the group of .success-image
-                // the order of images shown within this group is done through css
+                $('.success-image-final').hide();
+
+                // show .success-image folding
                 $('.success-image').delay(1000).fadeIn();
-                $('.success-image').append('<img class="success-image-start" src=' + src + '>');
-                $('.success-image-start').delay(6000).fadeOut();
-                $('.success-image-start').delay(6000).delete();
+                $('.success-image-start-1').fadeIn().delay(1000).fadeOut();
+                $('.success-image-start-2').delay(2500).fadeIn().delay(500).fadeOut();
+                $('.success-image-start-3').delay(4500).fadeIn().delay(1000).fadeOut();
+                $('.success-image-final').delay(4500).fadeIn();
                 $('.success-image-background').delay(7000).fadeOut();
 
                 // close createMessage modal and clear textarea
@@ -91,7 +93,7 @@
                     // show nav and page introduction
                     $('.page-introduction').animate({
                         marginTop: '0'
-                    }, 3000);
+                    }, 2000);
                     $('.nav').fadeIn();
                     $('[class*="message-button"]').delay(1000).fadeIn();
 
