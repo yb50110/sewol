@@ -8,7 +8,6 @@
 }
 
 .messages {
-  background-color: #000000;
   padding: 100px 150px;
   position: absolute;
   width: 100%;
@@ -63,7 +62,7 @@ button[class*="message-button"] {
   }
 
   &[class*='--yellow'] {
-    text-shadow: 0px 0px 1px black;
+    text-shadow: 0 0 1px black;
     color: $yellow !important;
     margin-left: -100px;
     position: fixed;
@@ -85,7 +84,7 @@ button[class*="message-button"] {
 
     .modal-content {
       background-image: url('../images/messages-letter.png');
-      padding: 90px 100px 90px 90px;
+      padding: 70px 100px 90px 90px;
       background-repeat: no-repeat;
       background-size: contain;
       height: 800px;

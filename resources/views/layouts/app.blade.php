@@ -7,9 +7,9 @@
 
     <title>Sewol Ferry</title>
 
-    {{-- Favicon --}}
+{{-- Favicon --}}
 
-    <!-- Styles -->
+<!-- Styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -19,7 +19,10 @@
 <body>
 
 <header class="group nav-container">
-    @include('components.nav')
+    <div class="col-md-11">
+
+        @include('components.nav')
+    </div>
 </header>
 
 <div class="body">
@@ -27,7 +30,9 @@
 </div>
 
 <footer>
-    <p>Copyright © 2018 of Yun Ha Seo</p>
+    <div class="offset-md-1">
+        <p>Copyright © 2018 of Yun Ha Seo</p>
+    </div>
 </footer>
 
 {{-- Javascript Libraries --}}
@@ -42,7 +47,7 @@
 {{-- AOS for scrolling fadein --}}
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         AOS.init({
             once: true
         });

@@ -2,6 +2,11 @@ $(document).ready(function () {
     // hide for messages page
     $('footer').remove();
 
+    // change the backgrund color synchronously as when background image loads
+    setTimeout(function() {
+        $('.messages').css('background-color', '#000000')
+    }, 2000);
+
     /**
      * Gets respective letter information
      * This allows asynchronous retrieval of data rather than loading all letter's data on page load
@@ -47,9 +52,6 @@ $(document).ready(function () {
         $('.messages').animate({
             top: '100%' // height of nav and page-intro
         }, 1500);
-        // $('.success-image-final').animate({
-        //     top: '100%' // height of nav and page-intro
-        // }, 1500);
 
         // slide intro up
         $('.page-introduction').animate({
@@ -70,9 +72,10 @@ $(document).ready(function () {
      * Animation effect for when modal is closing
      */
     $('.button--close').click(function() {
-        // close modal
+        // close modal and clear textarea
         setTimeout(function(){
             $('#createMessage').modal('hide').fadeOut();
+            $('#final_span').delay(1000).val('');
         }, 1000);
 
         // slide intro down

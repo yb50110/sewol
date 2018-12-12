@@ -14,7 +14,7 @@
             <h2 class="page-h2">Documentaries & Films</h2>
             <div class="group source-container">
                 @foreach($documentaries as $source)
-                    <a href="{{ $source->url }}" class="group source--documentaries">
+                    <a href="{{ $source->url }}" class="group source--documentaries" target="_blank">
                         <div class="source-image" style="background-image: url('{{ $source->image_url }}')"></div>
                         <p class="source-title">{{ $source->title }}</p>
                         <p class="source-author">{{ $source->author }}</p>
@@ -28,7 +28,7 @@
             <h2 class="page-h2">News Articles</h2>
             <div class="group source-container">
                 @foreach($news as $source)
-                    <a href="{{ $source->url }}" class="group source--news">
+                    <a href="{{ $source->url }}" class="group source--news" target="_blank">
                         <div class="source-image" style="background-image: url('{{ $source->image_url }}')"></div>
                         <p class="source-title">{{ $source->title }}</p>
                         <p class="source-author">{{ $source->author }}</p>
@@ -42,7 +42,7 @@
             <h2 class="page-h2">Other Resources</h2>
             <div class="group source-container--other">
                 @foreach($others as $source)
-                    <a href="{{ $source->url }}" class="group source--other">
+                    <a href="{{ $source->url }}" class="group source--other" target="_blank">
                         <div class="source-image" style="background-image: url('{{ $source->image_url }}')"></div>
                         <p class="source-title">{{ $source->title }}</p>
                         <p class="source-description">{{ $source->description }}</p>

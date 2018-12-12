@@ -108,17 +108,15 @@ if (!('webkitSpeechRecognition' in window)) {
     recognition.onstart = function () {
         recognizing = true;
         showInfo('info_speak_now');
-        //                        start_img.src = 'mic-animate.gif';
+        $('#start_button').html('type to write');
     };
 
     recognition.onerror = function (event) {
         if (event.error == 'no-speech') {
-            //                            start_img.src = 'mic.gif';
             showInfo('info_no_speech');
             ignore_onend = true;
         }
         if (event.error == 'audio-capture') {
-            //                            start_img.src = 'mic.gif';
             showInfo('info_no_microphone');
             ignore_onend = true;
         }
@@ -130,6 +128,7 @@ if (!('webkitSpeechRecognition' in window)) {
             }
             ignore_onend = true;
         }
+        $('#start_button').html('talk to write').prop('disabled', true);
     };
 
     recognition.onend = function () {
@@ -137,12 +136,12 @@ if (!('webkitSpeechRecognition' in window)) {
         if (ignore_onend) {
             return;
         }
-        //                        start_img.src = 'mic.gif';
         if (!final_transcript) {
+            $('#start_button').html('talk to write');
             showInfo('info_start');
             return;
         }
-        showInfo('');
+        // showInfo('');
         if (window.getSelection) {
             window.getSelection().removeAllRanges();
             var range = document.createRange();
@@ -166,7 +165,7 @@ if (!('webkitSpeechRecognition' in window)) {
         }
         final_transcript = capitalize(final_transcript);
         final_span.innerHTML = linebreak(final_transcript);
-        interim_span.innerHTML = linebreak(interim_transcript);
+        // interim_span.innerHTML = linebreak(interim_transcript);
         if (final_transcript || interim_transcript) {
             showButtons('inline-block');
         }
@@ -201,7 +200,7 @@ function startButton(event) {
     recognition.start();
     ignore_onend = false;
     final_span.innerHTML = '';
-    interim_span.innerHTML = '';
+    // interim_span.innerHTML = '';
     //                    start_img.src = 'mic-slash.gif';
     showInfo('info_allow');
     showButtons('none');
