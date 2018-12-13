@@ -1,7 +1,3 @@
-/**
- * Created by yb50110 on 10/11/18.
- */
-
 $(window).ready(function() {
     $('#start_button').click(function(event) {
         startButton(event);
@@ -29,8 +25,8 @@ if (!('webkitSpeechRecognition' in window)) {
 
     recognition.onstart = function () {
         recognizing = true;
-        showInfo('info_speak_now');
         $('#start_button').html('type to write');
+        showInfo('info_speak_now');
     };
 
     recognition.onerror = function (event) {
@@ -55,11 +51,11 @@ if (!('webkitSpeechRecognition' in window)) {
 
     recognition.onend = function () {
         recognizing = false;
+        $('#start_button').html('talk to write');
         if (ignore_onend) {
             return;
         }
         if (!final_transcript) {
-            $('#start_button').html('talk to write');
             showInfo('info_start');
             return;
         }
@@ -85,12 +81,11 @@ if (!('webkitSpeechRecognition' in window)) {
                 interim_transcript += event.results[i][0].transcript;
             }
         }
+        interim_span.innerHTML = linebreak(interim_transcript);
         final_transcript = capitalize(final_transcript);
-        final_span.innerHTML = linebreak(final_transcript);
-        // interim_span.innerHTML = linebreak(interim_transcript);
-        if (final_transcript || interim_transcript) {
-            showButtons('inline-block');
-        }
+        // append final_transcript to textarea but clear out the variable to prevent duplication
+        document.getElementById('final_span').value += final_transcript;
+        final_transcript = '';
     };
 }
 
@@ -122,30 +117,18 @@ function startButton(event) {
     recognition.start();
     ignore_onend = false;
     final_span.innerHTML = '';
-    // interim_span.innerHTML = '';
-//                    start_img.src = 'mic-slash.gif';
+    interim_span.innerHTML = '';
     showInfo('info_allow');
-    showButtons('none');
     start_timestamp = event.timeStamp;
 }
 
 function showInfo(s) {
+    console.log(info);
     if (s) {
         for (var child = info.firstChild; child; child = child.nextSibling) {
             if (child.style) {
                 child.style.display = child.id == s ? 'inline' : 'none';
             }
         }
-        info.style.visibility = 'visible';
-    } else {
-        info.style.visibility = 'hidden';
     }
-}
-
-var current_style;
-function showButtons(style) {
-    if (style == current_style) {
-        return;
-    }
-    current_style = style;
 }

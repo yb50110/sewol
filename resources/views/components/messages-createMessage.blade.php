@@ -5,7 +5,7 @@
             <div class="center" id="headline">
                 <div id="info">
                     <p id="info_start"></p>
-                    <p id="info_speak_now">What has been said: <span id="interim_span"></span></p>
+                    <p id="info_speak_now">What has been said: <span id="interim_span"></span><br></p>
                     <p id="info_no_speech">No speech was detected. You may need to adjust your
                         <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
                             microphone settings</a>.</p>
@@ -47,14 +47,14 @@
                 'text': $('#final_span').val(),
             },
             success: function (data) {
-                $('.success-image-final').hide();
+                recognizing = false;
 
                 // show .success-image folding
                 $('.success-image').delay(1000).fadeIn();
-                $('.success-image-start-1').fadeIn().delay(1000).fadeOut();
+                $('.success-image-start-1').fadeIn().delay(1500).fadeOut();
                 $('.success-image-start-2').delay(2500).fadeIn().delay(500).fadeOut();
-                $('.success-image-start-3').delay(4500).fadeIn().delay(1000).fadeOut();
-                $('.success-image-final').delay(4500).fadeIn();
+                $('.success-image-start-3').delay(5000).fadeIn().delay(500).fadeOut();
+                $('.success-image-final').delay(1000).fadeIn();
                 $('.success-image-background').delay(7000).fadeOut();
 
                 // close createMessage modal and clear textarea

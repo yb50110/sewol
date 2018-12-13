@@ -14,6 +14,7 @@
             The ferry had been swaying but there is a sudden and powerful tilt strong enough to throw passengers off the ground.
         </p>
         <img src="{{ asset('images/timeline-money.png') }}" style="width: 150px; top: 0; right: 0;">
+        <img src="{{ asset('images/timeline-shoes.png') }}" style="width: 190px; top: 30px; right: 100px;">
     </div>
 
     <div class="timeline-item-container">
@@ -23,6 +24,7 @@
         </p>
         <img src="{{ asset('images/timeline-slippers.png') }}" style="width: 190px; top: 30px; left: 0;">
         <img src="{{ asset('images/timeline-phone.png') }}" style="width: 80px; top: 40px; left: 180px;">
+        <img src="{{ asset('images/timeline-nametag.png') }}" style="width: 100px; top: 50px; left: 230px;">
     </div>
 
     <div class="timeline-item-container">
@@ -35,7 +37,8 @@
         <p class="col-md-6 timeline-item left">
             <span class="bold">10:20</span> Ferry completely flips and only the bow remains above water for 3 additional days. No passengers inside ferry was rescued.
         </p>
-        <img src="{{ asset('images/timeline-shoes.png') }}" style="width: 190px; top: 0; right: 0;">
+        <img src="{{ asset('images/timeline-skirt.png') }}" style="width: 150px; top: 165px; right: 100px;">
+        <img src="{{ asset('images/timeline-vest.png') }}" style="width: 170px; top: 0; right: 0;">
     </div>
 
     <div class="timeline-item-container">
@@ -48,10 +51,8 @@
         <p class="offset-md-6 col-md-6 timeline-item">
             <span class="yellow">May 14, 2014</span> President Park promises that there will be search efforts until all passenger bodies are recovered.
         </p>
-        <img src="{{ asset('images/timeline-jacket.png') }}" style="width: 250px; top: 30px; left: 0;">
-        <img src="{{ asset('images/timeline-tie.png') }}" style="width: 50px; top: 170px; left: 125px;">
-        <img src="{{ asset('images/timeline-notes.png') }}" style="width: 190px; top: 400px; left: 120px;">
-        <img src="{{ asset('images/timeline-nametag.png') }}" style="width: 70px; top: 615px; left: 0;">
+        <img src="{{ asset('images/timeline-jacket.png') }}" style="width: 340px; top: 30px; left: 0;">
+        <img src="{{ asset('images/timeline-tie.png') }}" style="width: 60px; top: 200px; left: 220px;">
     </div>
 
     <div class="timeline-item-container">
@@ -65,6 +66,7 @@
             <span class="yellow">September to November 2014</span> After months of protest from the victims’ families, the government passes a special law but in an incomplete and impractical state.
             <br><br>The purpose of this special law was to allow the power for investigating events related to the ferry sinking in order to dig for the truth. However, the passed law only allowed for retrieval of information.
         </p>
+        <img src="{{ asset('images/timeline-notes.png') }}" style="width: 220px; top: 150px; left: 50px;">
     </div>
 
     <div class="timeline-item-container">
@@ -82,8 +84,7 @@
         <p class="col-md-6 timeline-item left">
             <span class="yellow">September 2016</span> Special Investigation Committee is disbanded due to the expiration of the contract. The government counted the 8-month period where the committee was inactive due to insufficient funds.
         </p>
-        <img src="{{ asset('images/timeline-skirt.png') }}" style="width: 150px; top: 165px; right: 100px;">
-        <img src="{{ asset('images/timeline-vest.png') }}" style="width: 170px; top: 0; right: 0;">
+        <img src="{{ asset('images/timeline-uniform.png') }}" style="width: 330px; top: 0; right: 0;">
     </div>
 
     <div class="timeline-item-container">
@@ -100,7 +101,7 @@
         <p class="offset-md-6 col-md-6 timeline-item">
             <span class="yellow">August 6, 2018</span> The Sewol Ferry Hull Investigation Committee failed to pinpoint an exact cause for the sinking of Sewol. They left open the possibilities of an internal or external factors.
         </p>
-        <img src="{{ asset('images/timeline-shirt.png') }}" style="width: 200px; top: 30px; left: 0;">
+        <img src="{{ asset('images/timeline-shirt.png') }}" style="width: 300px; top: 0; left: 0;">
     </div>
 
     <div class="timeline-item-container">

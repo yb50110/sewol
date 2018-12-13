@@ -45,7 +45,7 @@ $(document).ready(function () {
 
 $(window).scroll(function () {
     var backgroundPositionTop = $('.timeline-background').offset().top + 250; // + ___ is the space of the yellow ship area
-    var backgroundPositionBottom = backgroundPositionTop + $('.timeline-background').outerHeight() - 380;  // - ___ is the extra padding on bottom
+    var backgroundPositionBottom = backgroundPositionTop + $('.timeline-background').outerHeight() - 340;  // - ___ is the extra padding on bottom
 
     if ($(window).scrollTop() <= backgroundPositionTop) {
         // Not .active is done so that the yellow styling of active link won't be affected

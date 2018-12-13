@@ -48,6 +48,8 @@ $(document).ready(function () {
      * Animation effect for when message-button is clicked
      */
     $('[class*="message-button"]').click(function () {
+        $('.success-image-final').hide();
+
         // slide water down
         $('.messages').animate({
             top: '100%' // height of nav and page-intro
@@ -64,6 +66,7 @@ $(document).ready(function () {
 
         // open modal
         setTimeout(function(){
+            document.getElementById("final_span").select();
             $('#createMessage').modal('show').fadeIn();
         }, 1000);
     });
