@@ -31,7 +31,7 @@
 
 <footer>
     <div class="offset-md-1">
-        <p>Copyright © 2018 of Yun Ha Seo</p>
+        <p>Copyright © 2018 of <a href="https://yunhaseo.com/" target="_blank">Yun Ha Seo</a> | <a href="https://github.com/yb50110/sewol" target="_blank">Github source code</a></p>
     </div>
 </footer>
 

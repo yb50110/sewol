@@ -366,6 +366,10 @@ footer {
   bottom: 20px;
 }
 
+.page-sources-footer p a, .page-sources-footer p .modal .modal-dialog .modal-content .button-group [class*='button--'], .modal .modal-dialog .modal-content .button-group .page-sources-footer p [class*='button--'] {
+  color: #ffffff;
+}
+
 .page-introduction-messages {
   text-align: center;
   margin: auto;
