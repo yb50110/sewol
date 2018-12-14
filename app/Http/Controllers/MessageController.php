@@ -13,11 +13,20 @@ class MessageController extends Controller
      *
      * @return Response
      */
-    public function show()
+    public function index()
     {
         $messages_items = Message::all();
 
         return view('messages', compact('messages_items'));
+    }
+
+    /**
+     * Get a specific message
+     */
+    public function show($message_id)
+    {
+        $message = Message::find($message_id);
+        return $message;
     }
 
     /**

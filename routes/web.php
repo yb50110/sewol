@@ -13,7 +13,8 @@
 
 Route::get('/', 'TimelineController@show')->name('timeline');
 
-Route::get('/messages', 'MessageController@show')->name('messages');
+Route::get('/messages', 'MessageController@index')->name('messages');
 Route::post('/messages', 'MessageController@store')->name('messages.store');
+Route::get('/messages/{message_id}', 'MessageController@show')->name('messages.show');
 
 Route::get('/sources', 'SourceController@show')->name('sources');
