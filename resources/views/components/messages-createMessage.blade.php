@@ -7,18 +7,17 @@
                     <p id="info_start"></p>
                     <p id="info_speak_now">What has been said: <span id="interim_span"></span><br></p>
                     <p id="info_no_speech">No speech was detected. You may need to adjust your
-                        <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+                        <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892" target="_blank">
                             microphone settings</a>.</p>
                     <p id="info_no_microphone" style="display:none">
                         No microphone was found. Ensure that a microphone is installed and that
-                        <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+                        <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892" target="_blank">
                             microphone settings</a> are configured correctly.</p>
                     <p id="info_allow">Click the "Allow" button above to enable your microphone.</p>
                     <p id="info_denied">Permission to use microphone was denied.</p>
-                    <p id="info_blocked">Permission to use microphone is blocked. To change,
-                        go to chrome://settings/contentExceptions#media-stream</p>
+                    <p id="info_blocked">Permission to use microphone is blocked. Click <a href="chrome://settings/contentExceptions#media-stream" target="_blank">here</a> change</p>
                     <p id="info_upgrade">Web Speech API is not supported by this browser.
-                        Upgrade to <a href="//www.google.com/chrome">Chrome</a>
+                        Upgrade to <a href="//www.google.com/chrome" target="_blank">Chrome</a>
                         version 25 or later.</p>
                 </div>
                 <div id="results">
@@ -47,8 +46,6 @@
                 'text': $('#final_span').val(),
             },
             success: function (data) {
-                recognizing = false;
-
                 // show .success-image folding
                 $('.success-image').delay(1000).fadeIn();
                 $('.success-image-start-1').fadeIn().delay(1500).fadeOut();

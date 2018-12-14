@@ -15,7 +15,7 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('text');
+            $table->longText('text');
             $table->string('audio_url')->nullable();
             $table->timestamps();
         });
