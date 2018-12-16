@@ -1,7 +1,8 @@
 $(document).ready(function () {
+    var intro_text = "On the early morning of April 16, 2014, the Sewol ferry flipped and capsized, taking the lives of 304 passengers out of 476. Of the victims, 250 were students of Danwon High School who were on a annual school trip.";
     // Fade-in text animation
     var i = -1;
-    var string = "On the early morning of April 16, 2016, the Sewol ferry flipped and capsized, taking the lives of 304 passengers out of 476. Of the victims, 250 were students of Danwon High School who were on a annual school trip.";
+    var string = intro_text;
     var array = string.split("");
     var x = document.getElementById('page-subtitle-timeline');
 
@@ -30,7 +31,7 @@ $(document).ready(function () {
         localStorage.setItem("firstVisitor", "true");
     } else {
         $('.page-subtitle')
-            .html('On the early morning of April 16, 2016, the Sewol ferry flipped and capsized, taking the lives of 304 passengers out of 476. Of the victims, 250 were students of Danwon High School who were on a annual school trip.')
+            .html(intro_text)
             .css({
                 'opacity': '0',
                 'animation': 'animation-fadein 2s forwards',

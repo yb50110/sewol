@@ -29,8 +29,6 @@
             // },
             success: function (result) {
                 result = JSON.parse(result);
-                console.log('hi');
-                console.log(result);
 
                 var text = result.text;
 
